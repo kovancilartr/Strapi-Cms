@@ -8,5 +8,5 @@ healthcheckPath = "/api/_health"
 restartPolicyType = "on_failure"
 
 [nixpacks]
-nodejs_version = "20"
+nodejs_version = "18"
 install_command = "yarn install --frozen-lockfile"
