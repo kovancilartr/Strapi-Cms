@@ -5,10 +5,10 @@
     "singularName": "category",
     "pluralName": "categories",
     "displayName": "Category",
-    "description": "Organize your content into categories"
+    "description": ""
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -16,16 +16,20 @@
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "name"
     },
-    "articles": {
+    "courses": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::article.article",
-      "mappedBy": "category"
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "categories"
     },
-    "description": {
-      "type": "text"
+    "icon": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
     }
   }
 }

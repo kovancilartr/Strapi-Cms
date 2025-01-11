@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapters",
+  "info": {
+    "singularName": "chapter",
+    "pluralName": "chapters",
+    "displayName": "Chapter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "videoUrl": {
+      "type": "string"
+    },
+    "position": {
+      "type": "integer"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFree": {
+      "type": "boolean",
+      "default": false
+    },
+    "section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::section.section",
+      "inversedBy": "chapters"
+    },
+    "attachments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::attachment.attachment",
+      "mappedBy": "chapter"
+    },
+    "user_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-progress.user-progress",
+      "mappedBy": "chapter"
+    }
+  }
+}
